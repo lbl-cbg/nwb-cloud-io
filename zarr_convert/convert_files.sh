@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is used to download a set of example NWB files from DANDI and convert the files from HDF5 to Zarr
+# Note: This script assumes that the create_conda_env.sh script has been run to setup the nwb_zarr conda environment
+
 # activate the python env
 module load conda
 conda activate nwb_zarr

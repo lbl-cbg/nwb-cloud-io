@@ -1,3 +1,7 @@
+"""
+Convert an NWB HDF5 file to Zarr
+"""
+
 from pynwb import NWBHDF5IO
 from hdmf_zarr.nwb import NWBZarrIO
 import sys
@@ -21,9 +25,4 @@ if __name__ == "__main__":
         hdf_filename = sys.argv[1]
         zarr_filename = hdf_filename +".zarr"
         convert(hdf_filename=hdf_filename, zarr_filename=zarr_filename)
-
-
-
-
-
 

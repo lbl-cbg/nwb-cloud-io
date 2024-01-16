@@ -1,4 +1,5 @@
 #!/bin/bash
+# Create a conda environment at NERSC with hdmf and hdmf-zarr installed
 
 module load conda
 conda create --name nwb_zarr python=3.11
@@ -16,5 +17,4 @@ git clone https://github.com/hdmf-dev/hdmf-zarr.git
 cd hdmf-zarr
 pip install -r requirements.txt -r requirements-dev.txt -r requirements-doc.txt
 pip install -e .
-
 
