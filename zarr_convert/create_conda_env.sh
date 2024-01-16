@@ -4,6 +4,7 @@ module load conda
 conda create --name nwb_zarr python=3.11
 conda activate nwb_zarr
 conda install h5py
+pip install dandi
 
 git clone --recurse-submodules https://github.com/hdmf-dev/hdmf.git
 cd hdmf
