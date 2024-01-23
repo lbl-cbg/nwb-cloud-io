@@ -21,17 +21,17 @@ fi
 # Convert the files
 echo "Converting sub-npI3_ses-20190421_behavior+ecephys.nwb"
 if ! test -f sub-npI3_ses-20190421_behavior+ecephys.nwb.zarr; then
-	python nwb_hdf_to_zarr.py sub-npI3_ses-20190421_behavior+ecephys.nwb
+	python nwb_hdf_to_zarr.py NestedDirectoryStore sub-npI3_ses-20190421_behavior+ecephys.nwb
 fi
 echo "DONE"
 echo "Converting sub-R6_ses-20200206T210000_behavior+ophys.nwb.zarr"
 if ! test -f sub-R6_ses-20200206T210000_behavior+ophys.nwb.zarr; then
-        python nwb_hdf_to_zarr.py sub-R6_ses-20200206T210000_behavior+ophys.nwb
+        python nwb_hdf_to_zarr.py NestedDirectoryStore sub-R6_ses-20200206T210000_behavior+ophys.nwb
 fi
 echo "DONE"
 echo "Converting sub-1214579789_ses-1214621812_icephys.nwb.zarr"
 if ! test -f sub-1214579789_ses-1214621812_icephys.nwb.zarr; then
-        python nwb_hdf_to_zarr.py sub-1214579789_ses-1214621812_icephys.nwb
+        python nwb_hdf_to_zarr.py NestedDirectoryStore sub-1214579789_ses-1214621812_icephys.nwb
 fi
 echo "DONE"
 
