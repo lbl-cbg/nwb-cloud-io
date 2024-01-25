@@ -77,12 +77,14 @@ pid_connections =  [k for k, v in connection_to_pid.items() if v == os.getpid()]
 
 # Filter out all the packets for this process pid by matching with the pid_connections
 pid_packets = []
-for packet in cap:
-    if hasattr(packet, 'tcp'):
-        ports = int(str(packet.tcp.srcport)), int(str(packet.tcp.dstport))
-        if ports in pid_connections:
-            pid_packets.append(packet)
-
+try:
+    for packet in cap:
+        if hasattr(packet, 'tcp'):
+            ports = int(str(packet.tcp.srcport)), int(str(packet.tcp.dstport))
+            if ports in pid_connections:
+                pid_packets.append(packet)
+except Exception: # pyshark.capture.capture.TSharkCrashException:
+    pass
 # Print basic connection statistics
 print("Number of connections:", int(len(pid_connections) / 2.0))
 print("Number of packets: ", len(pid_packets))
